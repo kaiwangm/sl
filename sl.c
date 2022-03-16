@@ -38,9 +38,10 @@
 /* sl version 1.00 : SL runs vomiting out smoke.                             */
 /*                                              by Toyoda Masashi 1992/12/11 */
 
-#include <curses.h>
+#include <Windows.h>
+#include "pdcurses/curses.h"
 #include <signal.h>
-#include <unistd.h>
+#include "unistd.h"
 #include "sl.h"
 
 void add_smoke(int y, int x);
@@ -109,7 +110,7 @@ int main(int argc, char *argv[])
         }
         getch();
         refresh();
-        usleep(40000);
+        Sleep(40);
     }
     mvcur(0, COLS - 1, LINES - 1, 0);
     endwin();
